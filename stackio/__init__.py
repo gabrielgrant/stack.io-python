@@ -24,7 +24,7 @@
 
 import zerorpc
 
-REGISTRAR_ENDPOINT = "tcp://127.0.0.1:27615"
+REGISTRAR_ENDPOINT = "ipc:///tmp/stackio-service-registrar"
 
 class ServiceConfig(object):
     def __init__(self, endpoint):
