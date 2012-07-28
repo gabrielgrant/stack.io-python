@@ -23,15 +23,17 @@ The python client can also expose services, e.g.:
         def say_hello(name):
             return "Hello, %s!" % name
 
-    client.expose("test-service", "tcp://127.0.0.1:4242", TestService())
+    client.expose("test-service", TestService())
 
 This will expose the service `test-service` at the endpoint
 `tcp://127.0.0.1:4242`.
 
 All client methods:
- * `expose(service_name, endpoint, context)` - Exposes a new stack.io service,
-   where `service_name` is the name of the service, `endpoint` is the ZeroMQ
-   endpoint to expose to, and `context` is the object to expose.
+ * `expose(service_name, context, endpoint=None)` - Exposes a new stack.io
+   service, where `service_name` is the name of the service, `endpoint` is the
+   ZeroMQ endpoint to expose to, and `context` is the object to expose. If no
+   `endpoint` is specified, a default one is created based on the
+   `service_name`.
  * `use(service_name)` - Prepares a service to be used, returning back an
    object that you can make RPC calls against. `service_name` is the name of a
    service.

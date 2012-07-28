@@ -45,7 +45,9 @@ class StackIO(object):
 
         registrar_client.close()
 
-    def expose(self, service_name, endpoint, context):
+    def expose(self, service_name, context, endpoint=None):
+        endpoint = endpoint or "ipc:///tmp/stackio-service-%s" % service_name
+
         server = zerorpc.Server(context)
         server.bind(endpoint)
 
