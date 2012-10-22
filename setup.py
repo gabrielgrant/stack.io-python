@@ -29,7 +29,7 @@ except ImportError:
 
 setup(
     name='stack.io',
-    version='0.1.2',
+    version='0.2.10',
     description='A language-agnostic framework for distributed and authenticated communication between web and back-end clients.',
     author='dotCloud, Inc.',
     url='https://github.com/dotcloud/stack.io-python',
