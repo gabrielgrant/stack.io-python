@@ -91,6 +91,6 @@ class StackIO(object):
             return cached.client
         else:
             cached.client = zerorpc.Client()
-            cached.client.connect(cached.endpoint)
+            cached.client.connect(cached.endpoint['endpoint'])
             return cached.client
 
